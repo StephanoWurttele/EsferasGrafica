@@ -17,3 +17,7 @@ vec3 operator/(float f, vec3 v) {
 vec3 operator*(float f, vec3 v) {
     return vec3(f*v.x, f*v.y, f*v.z);
 }
+
+vec3 operator+(float f, vec3 v) {
+    return vec3(f + v.x, f + v.y, f + v.z);
+}

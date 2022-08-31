@@ -14,6 +14,7 @@ class vec3 {
 public:
     float x,y,z;
     vec3() { x=y=z=0; }
+    vec3(float val) { x=y=z=val; }
     vec3(float h, float w) { x = rand()%20-10; y = rand()%20-10; z = rand()%20-10;};
     vec3(float _x, float _y, float _z) {x=_x;y=_y;z=_z;}
     vec3 operator+(vec3 v) { return vec3( x+v.x, y+v.y, z+v.z); }
@@ -48,9 +49,17 @@ public:
     vec3 operator-(vec3 v){
         return vec3(x-v.x, y-v.y,z-v.z);
     }
+    bool isblack(){
+        return x == 0 && y == 0 && z == 0;
+    }
+    void toblack(){
+        x = y = z = 0;
+        return;
+    }
 };
 
 vec3 operator/(float f, vec3 v);
 vec3 operator*(float f, vec3 v);
+vec3 operator+(float f, vec3 v);
 
 #endif //INC_20222_RAYTRACING_VECTOR_H

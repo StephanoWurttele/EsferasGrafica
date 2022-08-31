@@ -22,6 +22,7 @@ class Esfera : public Objeto {
 public:
     vec3 cen;
     float radio;
+    Esfera(){}
     Esfera(vec3 _cen, float _radio) {
         cen = _cen;
         radio = _radio;
@@ -36,6 +37,15 @@ public:
         radio = _radio;
     }
     bool interseccion(Rayo rayo, float &t, vec3 &normal);
+};
+
+class Plano : public Objeto {
+public:
+    float d;
+    vec3 normal;
+    Plano()= default;
+    Plano(vec3 _normal, float _d) { normal = _normal; d=_d;}
+    bool interseccion(Rayo rayo, float &t, vec3 &normal) override;
 };
 
 #endif //INC_20222_RAYTRACING_OBJETO_H

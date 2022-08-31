@@ -6,4 +6,4 @@ file(GLOB source_files
         *.cpp)
 
 add_executable(${PROJECT_NAME}
-        ${source_files} Luz.cpp Luz.h)
+        ${source_files} Luz.cpp Luz.h Mundo.cpp Mundo.h)
